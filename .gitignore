@@ -24,7 +24,7 @@
 hs_err_pid*
 
 #Test Project
-Test/.idea/
-Test/out
+Test/.idea/*
+Test/out/*
 Test/*.iml
 
