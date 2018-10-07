@@ -14,9 +14,6 @@ public class CarFactory {
             return new BMWCar();
         else
             throw new Exception();
-
-
-
     }
 
 }
