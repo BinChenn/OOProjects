@@ -17,15 +17,21 @@ public class Shell {
                 int carnum = Integer.valueOf(new BufferedReader(new InputStreamReader(System.in)).readLine());
                 System.out.println("Please input the price of car wanted to purchase");
                 Double price = Double.valueOf(new BufferedReader(new InputStreamReader(System.in)).readLine());
-                Purchase newcar = (Purchase)CarFactory.createCar(carname);
-                for (Car carele:
-                        record) {
-                    if(carele.getName().equalsIgnoreCase(carname)){
-                        newcar = (Purchase) carele;
+                try{
+                    Purchase newcar = (Purchase)CarFactory.createCar(carname);
+                    for (Car carele:
+                            record) {
+                        if(carele.getName().equalsIgnoreCase(carname)){
+                            newcar = (Purchase) carele;
+                        }
                     }
+                    newcar.purchase(carnum, price);
+                    record.add((Car) newcar);
+
                 }
-                newcar.purchase(carnum, price);
-                record.add((Car) newcar);
+                catch (NoneCarExcp ex){
+                    System.out.println("Don't exist this car!");
+                }
             }
             else if(command.equalsIgnoreCase("sell")){
                 System.out.println("Please input car name wanted to sell");

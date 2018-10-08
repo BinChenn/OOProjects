@@ -1,7 +1,7 @@
 package com;
 
 public class CarFactory {
-    public static Car createCar(String name)throws Exception{
+    public static Car createCar(String name)throws NoneCarExcp{
         if(name.equalsIgnoreCase("Toyota"))
             return new ToyataCar();
         else if(name.equalsIgnoreCase("Ford"))
@@ -13,7 +13,7 @@ public class CarFactory {
         else if(name.equalsIgnoreCase("BWM"))
             return new BMWCar();
         else
-            throw new Exception();
+            throw new NoneCarExcp();
     }
 
 }
