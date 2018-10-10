@@ -39,17 +39,21 @@ public class Shell {
                 System.out.println("Please input the number of car wanted to sell");
                 int carnum = Integer.valueOf(new BufferedReader(new InputStreamReader(System.in)).readLine());
                 int flag = 0;
-                for (Sell carele:
-                        record) {
-                    Car temp = (Car) carele;
-                    if(temp.getName().equalsIgnoreCase(carname)){
-                        carele.Sell(carnum);
-                        flag = 1;
-                        break;
+                try{
+                    for (Sell carele:
+                            record) {
+                        Car temp = (Car) carele;
+                        if(temp.getName().equalsIgnoreCase(carname)){
+                            carele.Sell(carnum);
+                            flag = 1;
+                            break;
+                        }
                     }
+                    if(flag==0)
+                        System.out.println("Car don't exist");
+                } catch (Insufficient ex){
+                    System.out.println("Car insufficient");
                 }
-                if(flag==0)
-                    System.out.println("Car don't exist, can't sell");
             }
             else if(command.equalsIgnoreCase("inquire")){
                 System.out.println("Please input car name wanted to inquire");

@@ -60,14 +60,13 @@ class ToyataCar extends Car{
     }
 
     @Override
-    public Double Sell(int number) {
+    public void Sell(int number) throws Insufficient{
         if(number <= getQuanity()){
             setOutDate(new Date());
             setQuanity(getQuanity() - number);
-            return getPrice()*number;
         }
         else
-            return -1.0;
+            throw new Insufficient();
     }
 
     @Override
@@ -93,14 +92,13 @@ class BMWCar extends Car{
     }
 
     @Override
-    public Double Sell(int number) {
+    public void Sell(int number) throws Insufficient{
         if(number <= getQuanity()){
             setOutDate(new Date());
             setQuanity(getQuanity() - number);
-            return getPrice()*number;
         }
         else
-            return -1.0;
+            throw new Insufficient();
     }
 
 
@@ -128,14 +126,13 @@ class FordCar extends Car {
     }
 
     @Override
-    public Double Sell(int number) {
+    public void Sell(int number) throws Insufficient{
         if(number <= getQuanity()){
             setOutDate(new Date());
             setQuanity(getQuanity() - number);
-            return getPrice()*number;
         }
         else
-            return -1.0;
+            throw new Insufficient();
     }
 
     @Override
@@ -162,14 +159,13 @@ class BenzCar extends Car{
     }
 
     @Override
-    public Double Sell(int number) {
+    public void Sell(int number) throws Insufficient{
         if(number <= getQuanity()){
             setOutDate(new Date());
             setQuanity(getQuanity() - number);
-            return getPrice()*number;
         }
         else
-            return -1.0;
+            throw new Insufficient();
     }
 
     @Override
@@ -196,14 +192,13 @@ class AudiCar extends Car {
     }
 
     @Override
-    public Double Sell(int number) {
+    public void Sell(int number) throws Insufficient{
         if(number <= getQuanity()){
             setOutDate(new Date());
             setQuanity(getQuanity() - number);
-            return getPrice()*number;
         }
         else
-            return -1.0;
+            throw new Insufficient();
     }
 
     @Override

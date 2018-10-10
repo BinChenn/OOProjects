@@ -1,5 +1,5 @@
 package com;
 
 public interface Sell {
-    Double Sell(int number);
+    void Sell(int number) throws Insufficient;
 }
