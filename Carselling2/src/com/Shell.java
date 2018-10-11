@@ -64,6 +64,7 @@ public class Shell {
                         record) {
                     Car temp = (Car) carele;
                     if(temp.getName().equalsIgnoreCase(carname)){
+                        InquireAction inqu = new
                         System.out.println(carele.inquire(info));
                         break;
                     }
