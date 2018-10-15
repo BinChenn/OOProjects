@@ -1,5 +1,5 @@
 package com;
 
-public interface Purchase{
+public interface Purchase {
     void purchase(int number, Double price);
 }
