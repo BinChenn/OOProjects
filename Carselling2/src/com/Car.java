@@ -2,12 +2,14 @@ package com;
 
 import java.util.Date;
 
-public abstract class Car  implements Purchase, Sell, Inquire{
+public abstract class Car implements Purchase, Sell, Inquire{
     private String name;
     private Double price;
     private int quanity;
     private Date InDate;
     private Date OutDate;
+    private InquirePrice priceinq;
+
 
     public String getName(){
         return name;
@@ -33,7 +35,7 @@ public abstract class Car  implements Purchase, Sell, Inquire{
     }
 
     public Double getPrice() {
-        return price;
+        return priceinq.getPrice(this.price);
     }
 
     public void setPrice(Double price) {
@@ -46,6 +48,10 @@ public abstract class Car  implements Purchase, Sell, Inquire{
 
     public void setQuanity(int quanity) {
         this.quanity = quanity;
+    }
+
+    public void setPriceinq(InquirePrice inp){
+        this.priceinq = inp;
     }
 
 }

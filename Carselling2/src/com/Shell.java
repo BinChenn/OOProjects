@@ -64,6 +64,17 @@ public class Shell {
                         record) {
                     Car temp = (Car) carele;
                     if(temp.getName().equalsIgnoreCase(carname)){
+                        if(info.equalsIgnoreCase("price")){
+                            System.out.println("Please input price type(1,2,3)");
+                            String typestr = new BufferedReader(new InputStreamReader(System.in)).readLine();
+                            int type = Integer.valueOf(typestr);
+                            if(type == 1)
+                                temp.setPriceinq(new NormalPrice());
+                            else if(type == 2)
+                                temp.setPriceinq(new RegularPrice());
+                            else if(type == 3)
+                                temp.setPriceinq(new HolidayPrice());
+                        }
                         System.out.println(carele.inquire(info));
                         break;
                     }
