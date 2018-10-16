@@ -1,7 +1,5 @@
 package com;
 
-public class InquireAction {
+public interface Inquire {
     String inquire(String command);
 }
-
-
