@@ -8,7 +8,7 @@ Three fundamental functions: Purchaseing, Selling and Inquire information.
 - Using factory pattern.
 ## Project2: CarSelling2
 Add price discouting function on Project 1.
-- Using strstegy pattern.
+- Using strategy pattern.
 ## Project3: CarFactory
 Experiment1 project.
 A car factory system.
