@@ -1,20 +1,22 @@
 package com;
 
 public abstract class Order {
-    protected String providerType;
     private String name;
-    //private Double price;
+    protected Double price;
 
 
-    public final Double getTax(){
-        return getTaxRate()*pay();
+    public final void calculateAll(String paytype){
+        Double money = pay(paytype, price);
+        Double tax =  getTaxRate()*money;
+        System.out.println("税率："+getTaxRate()+",税费："+tax);
+        System.out.println("实收："+String.valueOf(tax+money));
+    }
+
+    public final Double pay(String paytype, Double price){
+        Payment payment = PayFactory.getPayment(paytype, price);
+        return payment.pay();
     }
 
     public abstract Double getTaxRate();
-
-    public Double pay(){
-
-
-    }
 
 }

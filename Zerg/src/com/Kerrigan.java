@@ -14,4 +14,8 @@ public class Kerrigan {
             return kerrigan;
     }
 
+    public void info(){
+        System.out.println("this is kerrigan");
+    }
+
 }
