@@ -17,8 +17,24 @@ public class JobMediator implements Mediator {
 
     }
 
+    @Override
+    public void notifyfinders() {
+        Company job = companylist.get(companylist.size()-1);
+        for (int i = 0; i < finders.size(); i++){
+            JobFinder fi = finders.get(i);
+            if ((fi.getExpectedSalary() <= job.getSalary())
+                    && (fi.getExpectedJob() == job.getJobtype())
+                    && (fi.getExpectedAddress() == job.getJobaddress())
+            )
+                System.out.println("Hey " + fi.getName()+", There is a job: "
+                + job.getName()+" suit you!");
+        }
+
+    }
+
     public void RegisterJob(Company job){
         companylist.add(job);
+        this.notifyfinders();
     }
 
     public void RegisterFinder(JobFinder finder){
