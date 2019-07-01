@@ -1,5 +1,5 @@
 # OOProjects
-Object Oriented Class
+This is a homework for Object-Oriented Programming class in THU, 2018 Fall.
 ## Project 0: Test
 Test the way to push code to github, success!
 ## Project 1: CarSelling
